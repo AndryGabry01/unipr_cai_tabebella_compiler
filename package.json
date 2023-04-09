@@ -1,7 +1,7 @@
 {
   "name": "unipr_cai",
   "version": "0.1.0",
-  "homepage": "http://{AndryGabry01}.github.io/{unipr_cai_tabebella_compiler}",
+  "homepage": "http://AndryGabry01.github.io/unipr_cai_tabebella_compiler",
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^3.1.9",
@@ -23,7 +23,7 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject" 
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
