@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/%7Bunipr_cai_tabebella_compiler%7D/static/css/main.84dfd02f.css",
+    "main.js": "/%7Bunipr_cai_tabebella_compiler%7D/static/js/main.aa4a6f23.js",
+    "static/js/787.84e4d631.chunk.js": "/%7Bunipr_cai_tabebella_compiler%7D/static/js/787.84e4d631.chunk.js",
+    "static/media/logopdf.png": "/%7Bunipr_cai_tabebella_compiler%7D/static/media/logopdf.88cdc449df10601259cd.png",
+    "static/media/logo.png": "/%7Bunipr_cai_tabebella_compiler%7D/static/media/logo.492a7b358a20f4419613.png",
+    "index.html": "/%7Bunipr_cai_tabebella_compiler%7D/index.html",
+    "main.84dfd02f.css.map": "/%7Bunipr_cai_tabebella_compiler%7D/static/css/main.84dfd02f.css.map",
+    "main.aa4a6f23.js.map": "/%7Bunipr_cai_tabebella_compiler%7D/static/js/main.aa4a6f23.js.map",
+    "787.84e4d631.chunk.js.map": "/%7Bunipr_cai_tabebella_compiler%7D/static/js/787.84e4d631.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84dfd02f.css",
+    "static/js/main.aa4a6f23.js"
+  ]
+}
