@@ -1,0 +1,90 @@
+ [
+    {
+        "id": "1",
+        "value": "Tempo aggiuntivo (30% o 50% nel caso di disabilità)"
+    },
+    {
+        "id": "2",
+        "value": "Tempo maggiore per riflettere sulla risposta durante l’orale"
+    },
+    {
+        "id": "3",
+        "value": "Uso del PC"
+    },
+    {
+        "id": "4",
+        "value": "Lettura vicariata (tutor lettore)"
+    },
+    {
+        "id": "5",
+        "value": "Uso della calcolatrice"
+    },
+    {
+        "id": "6",
+        "value": "Consultazione di mappe concettuali/mentali (solo parole-chiave)"
+    },
+    {
+        "id": "7",
+        "value": "Consultazione di schemi (solo parole-chiave)"
+    },
+    {
+        "id": "8",
+        "value": "Consultazione di formulari (solo formule)"
+    },
+    {
+        "id": "9",
+        "value": "Consultazione di Dizionari/Codici/Normative"
+    },
+    {
+        "id": "10",
+        "value": "Conversione dello scritto in orale"
+    },
+    {
+        "id": "11",
+        "value": "Conversione dell’orale in scritto"
+    },
+    {
+        "id": "12",
+        "value": "Divisione dell’esame in più prove parziali"
+    },
+    {
+        "id": "13",
+        "value": "Variazione della tipologia di prova (ad es. domande aperte invece di test a scelta multipla)"
+    },
+    {
+        "id": "14",
+        "value": "Valutazione dei contenuti più che della forma"
+    },
+    {
+        "id": "15",
+        "value": "Valutazione dei procedimenti più che dei risultati"
+    },
+    {
+        "id": "16",
+        "value": "Interrogazione per primo o ultimo (in caso di esame orale)"
+    },
+    {
+        "id": "17",
+        "value": "Interrogazione senza uditori (in caso di esame orale)"
+    },
+    {
+        "id": "18",
+        "value": "Scrivere domande e/o risposte in stampatello"
+    },
+    {
+        "id": "19",
+        "value": "Testo dell’esame Ingrandito"
+    },
+    {
+        "id": "20",
+        "value": "Tenere fogli bianchi e una penna per le prove"
+    },
+    {
+        "id": "21",
+        "value": "Se possibile niente doppie negazioni all’interno delle domande"
+    },
+    {
+        "id": "22",
+        "value": "Informare il/la docente delle difficoltà nello scritto e/o nell’orale"
+    }
+]
