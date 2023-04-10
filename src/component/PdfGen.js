@@ -2,24 +2,13 @@ import React, { Fragment } from "react";
 import { Page, Document, Text, View, StyleSheet, Image, pdf } from "@react-pdf/renderer";
 import { saveAs } from 'file-saver';
 
-import square from '../../media/square.png'; // with import
-import cross from '../../media/close.png'; // with import
-import logoPDF from '../../media/logopdf.png'; // with import
-function PdfGen({ data }) {
-    const d = data
-    
+import square from '../media/square.png'; // with import
+import cross from '../media/close.png'; // with import
+import logoPDF from '../media/logopdf.png'; // with import
+function PdfGen({ data }) {   
     return <LazyDownloadPDFButton data={data} />
     // return <MyDocument user={user} exam={exam} docente={docente} listData={data.listaMezziComp} />
 }
-
-
-const DocumentPdf = ({ someString }) => (
-    <Document>
-        <Page>
-            <Text>Hey look at this string: {someString}</Text>
-        </Page>
-    </Document>
-);
 
 const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
 
@@ -69,7 +58,7 @@ async function getProps(data) {
 
     }
     console.log(pdf_dat)
-    await delay(1_000);
+    await delay(100);
     return pdf_dat;
 }
 
@@ -78,13 +67,13 @@ const LazyDownloadPDFButton = ({ data }) => (
 
         onClick={async () => {
             const props = await getProps(data);
-            { console.log(props) }
+            { console.log(props.exam.name[0].xyz) }
 
             const doc = <MyDocument user={props.user} exam={props.exam} docente={props.docente} listData={props.listaMezziComp} />;
             const asPdf = pdf([]);
             asPdf.updateContainer(doc);
             const blob = await asPdf.toBlob();
-            saveAs(blob, 'document.pdf');
+            saveAs(blob, 'SCHEDA DI RICHIESTA DI ESAME PERSONALIZZATO_'+props.user.items[0].xyz+'_'+props.user.items[0].xyz+'_'+props.exam.name[0].xyz+'_'+props.exam.date[0].xyz+'.pdf');
         }}
     >
         Download PDF

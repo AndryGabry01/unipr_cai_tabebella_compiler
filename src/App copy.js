@@ -5,9 +5,6 @@
  * implementare ora e data
  * 
  * Riordinare il progetto
- * !SISTEMARE DATA E ORA NEL PDF 
- * !SISTEMARE PDF STYLE
- * !NON FUNZIONANO BENE GLI INPUT; IL NOME DEL FILE È COMPOSTO IN MODO STRANO ED IL PDF NON VIENE POPOLATO BENE 
  */
 
 
@@ -21,10 +18,7 @@ import PdfGen from "./component/PdfGen";
 import { Page, Text, View, Image, Document, pdf, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 //import Table from "./component/TablePDF/Table"; //https://kags.me.ke/post/generate-dynamic-pdf-incoice-using-react-pdf/
 import WebFont from 'webfontloader';
-document.title = "CAI - Tabella";
-//!INSERIRE FAVICON
 
-//LOADING FONT
 WebFont.load({
   google: {
     families: ['Open Sans:300,400,700', 'sans-serif']
@@ -36,12 +30,6 @@ function App() {
   const [checkedList, setCheckedList] = useState([]);
   const [userData, setuserData] = useState({ nomecognome: "", matricola: 0, corso: "", annocorso: 0 });
   const [examData, setexamData] = useState({ nomedocente: "", nomeesame: "", isParziale: false, isOrale: false, dataesame: "", oraesame: "" });
-
-  /*
-  TODO: ADD COOKIE TO SAVE CHECK SELECTION AND INPUT FOR FUTURE VISIT 
-  TODO: const [cookies, setCookie, removeCookie] = useCookies(['unipr_cai_list']);
-  TODO https://www.npmjs.com/package/react-cookie
-  */
 
   /**Mezzi compensativi */
   const handleSelect = (event) => {
@@ -123,71 +111,66 @@ function App() {
   }
 
   return (
-    <div className="card">
-      <Header />
-
-      <div className="Informazioni_studente">
-        <h2>Informazioni</h2>
-        <input type="text" placeholder="Nome e Cognome" onInput={handle_input} data-name="nomecognome"></input>
-        <input type="number" placeholder="Matricola" data-name="matricola" onInput={handle_input} ></input>
-        <input type="text" placeholder="Corso di laurea (Es: 3061 INGEGNERIA DELLE TECNOLOGIE INFORMATICHE)" data-name="corso" onInput={handle_input} ></input>
-        <input type="number" placeholder="Anno di Corso" data-name="annocorso" onInput={handle_input} ></input>
-        <input type="text" placeholder="Nome del Docente" onInput={handle_input} data-name="nomedocente"></input>
-        <input type="text" placeholder="Nome dell'insegnamento" onInput={handle_input} data-name="nomeesame"></input>
-        <div className="switchs">
-          <label class="switch">
-            <input type="checkbox" data-name="isParziale" onChange={handle_input} ></input>
-            <span class="slider">Parziale</span>
-          </label>
-          <label class="switch">
-            <input type="checkbox" data-name="isOrale" onChange={handle_input} ></input>
-            <span class="slider">Orale</span>
-          </label>
-        </div>
-        <div className="switchs">
+    <div className="container">
+      <div className="card">
+        <Header />
+        
+        <div className="Informazioni_studente">
+          <h2>Informazioni</h2>
+          <input type="text" placeholder="Nome e Cognome" onInput={handle_input} data-name="nomecognome"></input>
+          <input type="number" placeholder="Matricola" data-name="matricola" onInput={handle_input} ></input>
+          <input type="text" placeholder="Corso di laurea (Es: 3061 INGEGNERIA DELLE TECNOLOGIE INFORMATICHE)" data-name="corso" onInput={handle_input} ></input>
+          <input type="number" placeholder="Anno di Corso" data-name="annocorso" onInput={handle_input} ></input>
+          <input type="text" placeholder="Nome del Docente" onInput={handle_input} data-name="nomedocente"></input>
+          <input type="text" placeholder="Nome dell'insegnamento" onInput={handle_input} data-name="nomeesame"></input>
+          <div className="checkbox-container la">
+            <label><input type="checkbox" onChange={handle_input} data-name="isParziale"></input>È un parziale?</label>
+          </div>
+          
+          <div className="checkbox-containInput={handle_input} ner la">
+            <label><input type="checkbox" data-name="isOrale" onChange={handle_input} ></input>È un orale?</label>
+          </div>
+          <span>Data dell'Esame</span>
           <input type="date" placeholder="dd-mm-yyyy" onInput={handle_input} data-name="dataEsame"></input>
           <input type="time" onInput={handle_input} data-name="oraesame"></input>
         </div>
 
+        <div className="mezzi_comp">
+          <h2>Richiesta</h2>
+          <div className="list">
 
-      </div>
-
-      <div className="mezzi_comp">
-        <h2>Richiesta</h2>
-        <div className="list">
-
-          {mezzi_compensativi.map((item, index) => {
-            return (
-              <div key={item.id} className="checkbox-container">
-                <label><input
-                  type="checkbox"
-                  name="languages"
-                  value={item.value}
-                  onChange={handleSelect}
-                />
-                  {item.value}</label>
-              </div>
-            );
-          })}
+            {mezzi_compensativi.map((item, index) => {
+              return (
+                <div key={item.id} className="checkbox-container">
+                  <label><input
+                    type="checkbox"
+                    name="languages"
+                    value={item.value}
+                    onChange={handleSelect}
+                  />
+                    {item.value}</label>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mezzi_comp_select">
+          <h2>Mezzi Compensativi Selezionati</h2>
+          <div className="list">
+            {checkedList.map((item, index) => {
+              return (
+                <div className="chip">
+                  <p className="chip-label">{item}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="Download">
+          {<DownloadButton />}
         </div>
       </div>
-      <div className="mezzi_comp_select">
-        <h2>Mezzi Richiesti</h2>
-        <div className="list">
-          {checkedList.map((item, index) => {
-            return (
-              <div className="chip">
-                <p className="chip-label">{item}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="Download">
-        {<DownloadButton />}
-      </div>
-      <span className="Designer">Designed by <a target="_blank" href="https://wandry.it">Andrea Gabriele</a></span>
-    </div>
+    </div >
   );
 }
 /**
