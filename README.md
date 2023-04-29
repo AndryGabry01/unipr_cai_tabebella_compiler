@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Creatore di Schede Richiesta di Esame Personalizzato
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Benvenuto nella repository del Creatore di Schede Richiesta di Esame Personalizzato. Questo sito è stato creato per aiutare gli studenti con esigenze specifiche, come ad esempio gli studenti con DSA o con disturbi dell'apprendimento, a compilare la scheda per la richiesta di esame personalizzato in modo semplice e veloce.
 
-## Available Scripts
+## Utilizzo del sito
 
-In the project directory, you can run:
+Per utilizzare il sito, basta accedere alla pagina principale e compilare i campi richiesti. Successivamente, selezionare i mezzi compensativi che si desidera richiedere e premere il pulsante "Genera PDF". Il sito genererà automaticamente la scheda per la richiesta di esame personalizzato, in formato PDF. La scheda generata dovrà essere consegnata al docente.
 
-### `npm start`
+## Dettagli tecnici
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Il sito prende la lista dei mezzi compensativi da un file .json chiamato `mezzi_compensativi.json`. È scritto in React e utilizza i seguenti pacchetti terzi:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- "@react-pdf/renderer": "^3.1.9"
+- "@testing-library/jest-dom": "^5.16.5"
+- "@testing-library/react": "^13.4.0"
+- "@testing-library/user-event": "^13.5.0"
+- "date-fns": "^2.29.3"
+- "file-saver": "^2.0.5"
+- "flowbite": "^1.6.5"
+- "flowbite-datepicker": "^1.2.2"
+- "moment": "^2.29.4"
+- "react": "^18.2.0"
+- "react-cookie": "^4.1.1"
+- "react-dom": "^18.2.0"
+- "react-icons": "^4.8.0"
+- "react-scripts": "^5.0.1"
+- "web-vitals": "^2.1.4"
+- "webfontloader": "^1.6.28"
 
-### `npm test`
+## Dissociamento
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+È importante specificare che questo progetto non ha alcun rapporto con l'Università di riferimento o con eventuali enti o organizzazioni che si occupano di supporto agli studenti con esigenze specifiche. Si tratta di un progetto creato da Andrea Gabriele, associato di Sinistra Studentesca Universitaria, con l'obiettivo di aiutare gli studenti con disturbi dell'apprendimento.
 
-### `npm run build`
+## Contributi
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Se desideri contribuire al progetto, puoi fare una pull request nella repository del progetto su Github. In alternativa, puoi contattare direttamente il proprietario del progetto per discutere delle tue idee di miglioramento.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Segnalazione di bug
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Se riscontri problemi con il sito, ti preghiamo di segnalarlo aprendo un nuovo ticket nella sezione Issues su Github. Ti invitiamo a descrivere il problema in dettaglio e a fornire tutte le informazioni necessarie per riprodurre il bug.
 
-### `npm run eject`
+## Licenza
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Il presente codice è rilasciato sotto una licenza proprietaria e non può essere utilizzato al di fuori del contesto di questo progetto senza esplicita autorizzazione del proprietario.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Tutti i diritti relativi ai pacchetti terzi e ai loghi rimangono di proprietà dei rispettivi proprietari e non possono essere utilizzati in alcun modo al di fuori del presente progetto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Chiunque desideri utilizzare il codice per altri scopi deve ottenere una autorizzazione scritta dal proprietario del progetto. Inoltre, il codice non può essere distribuito o venduto senza il permesso del proprietario.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Il proprietario del progetto non si assume alcuna responsabilità per eventuali danni o conseguenze derivanti dall'uso del codice.
