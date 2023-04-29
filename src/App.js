@@ -6,9 +6,6 @@
  * 
  * Riordinare il progetto
  */
-import Datepicker from 'flowbite-datepicker/Datepicker';
-
-
 import React, { useState } from "react";
 import moment from 'moment';
 import './App.css';
@@ -16,10 +13,8 @@ import Header from "./component/Header";
 import mezzi_compensativi from './mezzi_compensativi.json'
 
 import PdfGen from "./component/PdfGen";
-import { Page, Text, View, Image, Document, pdf, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 //import Table from "./component/TablePDF/Table"; //https://kags.me.ke/post/generate-dynamic-pdf-incoice-using-react-pdf/
 import WebFont from 'webfontloader';
-import { useCookies } from 'react-cookie';
 document.title = "CAI - Tabella";
 //!INSERIRE FAVICON
 
