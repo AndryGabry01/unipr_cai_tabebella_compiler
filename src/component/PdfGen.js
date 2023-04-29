@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver';
 import square from '../media/square.png'; // with import
 import cross from '../media/close.png'; // with import
 import logoPDF from '../media/logopdf.png'; // with import
-function PdfGen({ data }) {   
+function PdfGen({ data }) {
     return <LazyDownloadPDFButton data={data} />
     // return <MyDocument user={user} exam={exam} docente={docente} listData={data.listaMezziComp} />
 }
@@ -13,7 +13,6 @@ function PdfGen({ data }) {
 const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
 
 async function getProps(data) {
-
     const pdf_dat = {
         user: {
             id: "5df3180a09ea16dc4b95f910",
@@ -47,12 +46,12 @@ async function getProps(data) {
             name: [{
                 sr: 1,
                 desc: "Nome Esame",
-                xyz: data.exam.nomeesame,
+                xyz: data.exam.nomeesame.concat(data.exam.isParziale ? "(Parziale)" : "", data.exam.isOrale ? " (Orale)" : ""),
             }],
             date: [{
                 sr: 1,
                 desc: "Giorno ed orario dell’esame: (se ancora non li conosci indica il mese o la sessione",
-                xyz: data.exam.dataesame+" "+data.exam.oraesame,
+                xyz: data.exam.dataesame + " " + data.exam.oraesame,
             }],
         }, listaMezziComp: data.listaMezziComp
 
@@ -67,13 +66,14 @@ const LazyDownloadPDFButton = ({ data }) => (
 
         onClick={async () => {
             const props = await getProps(data);
+            const FILE_NAME = 'SCHEDA DI RICHIESTA DI ESAME PERSONALIZZATO_' + props.user.items[0].xyz + '_' + props.user.items[1].xyz + '_' + props.exam.name[0].xyz + '_' + props.exam.date[0].xyz + '.pdf'.replace(" ", "_")
             { console.log(props.exam.name[0].xyz) }
 
             const doc = <MyDocument user={props.user} exam={props.exam} docente={props.docente} listData={props.listaMezziComp} />;
             const asPdf = pdf([]);
             asPdf.updateContainer(doc);
             const blob = await asPdf.toBlob();
-            saveAs(blob, 'SCHEDA DI RICHIESTA DI ESAME PERSONALIZZATO_'+props.user.items[0].xyz+'_'+props.user.items[0].xyz+'_'+props.exam.name[0].xyz+'_'+props.exam.date[0].xyz+'.pdf');
+            saveAs(blob, FILE_NAME);
         }}
     >
         Download PDF

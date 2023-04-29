@@ -5,10 +5,8 @@
  * implementare ora e data
  * 
  * Riordinare il progetto
- * !SISTEMARE DATA E ORA NEL PDF 
- * !SISTEMARE PDF STYLE
- * !NON FUNZIONANO BENE GLI INPUT; IL NOME DEL FILE È COMPOSTO IN MODO STRANO ED IL PDF NON VIENE POPOLATO BENE 
  */
+import Datepicker from 'flowbite-datepicker/Datepicker';
 
 
 import React, { useState } from "react";
@@ -21,6 +19,7 @@ import PdfGen from "./component/PdfGen";
 import { Page, Text, View, Image, Document, pdf, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 //import Table from "./component/TablePDF/Table"; //https://kags.me.ke/post/generate-dynamic-pdf-incoice-using-react-pdf/
 import WebFont from 'webfontloader';
+import { useCookies } from 'react-cookie';
 document.title = "CAI - Tabella";
 //!INSERIRE FAVICON
 
@@ -36,6 +35,7 @@ function App() {
   const [checkedList, setCheckedList] = useState([]);
   const [userData, setuserData] = useState({ nomecognome: "", matricola: 0, corso: "", annocorso: 0 });
   const [examData, setexamData] = useState({ nomedocente: "", nomeesame: "", isParziale: false, isOrale: false, dataesame: "", oraesame: "" });
+  //const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
 
   /*
   TODO: ADD COOKIE TO SAVE CHECK SELECTION AND INPUT FOR FUTURE VISIT 
@@ -89,11 +89,9 @@ function App() {
         exam_temp.isOrale = event.target.checked;
         break;
       case "dataEsame":
-        console.log(new Date(event.target.value), event.target.value)
         exam_temp.dataesame = moment(new Date(event.target.value)).format('DD/MM/YYYY');
         break;
       case "oraesame":
-        console.log(event.target.value, event.target.value)
         exam_temp.oraesame = moment(event.target.value, "HH:mm").format('HH:mm');
         break;
       default:
@@ -104,21 +102,27 @@ function App() {
     setexamData(exam_temp);
     //Forza l'update, server per far si che il pulsante di download si aggiorni
     setUpdateforce(updateforce + 1)
+    /*-First--*/
+    console.log("first")
+
+    console.log(userData, examData, updateforce)
   }
   /**Prepara i dati da mandare al componente del pulsante Download */
   const DownloadButton = () => {
     const exam = examData;
-    exam.nomeesame = exam.isParziale && !exam.nomeesame.includes("(Parziale) ") ? exam.nomeesame + "(Parziale) " : exam.nomeesame;
-    exam.nomeesame = exam.isOrale && !exam.nomeesame.includes("(Orale) ") ? exam.nomeesame + "(Orale) " : exam.nomeesame;
     const pdf_data = {
       user: userData,
-      exam: exam,
+      exam: examData,
       listaMezziComp: {
         mezzi: mezzi_compensativi,
         mezzi_scelti: checkedList
       },
       update: updateforce
     }
+    /*-Sec--*/
+    console.log("sec")
+    console.log(userData, exam, updateforce, pdf_data)
+
     return <PdfGen data={pdf_data} />
   }
 
@@ -148,6 +152,7 @@ function App() {
           <input type="date" placeholder="dd-mm-yyyy" onInput={handle_input} data-name="dataEsame"></input>
           <input type="time" onInput={handle_input} data-name="oraesame"></input>
         </div>
+        <span id='datepickerId'></span>
 
 
       </div>
@@ -186,13 +191,16 @@ function App() {
       <div className="Download">
         {<DownloadButton />}
       </div>
-      <span className="Designer">Designed by <a target="_blank" href="https://wandry.it">Andrea Gabriele</a></span>
+      <span className="Designer">Designed by <a target="_blank" href="https://wandry.it">Andrea Gabriele</a>&<a target="_blank" href="https://urlshortener.at/agr38">SSU</a></span>
+    <script>
+      
+    </script>
     </div>
   );
 }
+//https://urlshortener.at/total-of-clicks.php?u=urlshortener.at%2Fagr38 ssu link counter
 /**
  *  La lista dei mezzi compensativi si aggiorna
- * TODO: far si che i campi come nomme cognome ed etc vengano inseriti tramaite gli input
  * ! questo comando seve per scaricare il pdf, pero il problema è che se pre incluso fa laggare tutto poi che ad ogni modifica crasha.
     <PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
           {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}

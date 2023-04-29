@@ -371,8 +371,9 @@ input[type="checkbox"] {
   color: rgb(92, 92, 92);
 }
 .Designer a{
-  text-align: none;
   color: rgb(92, 92, 92);
+  margin-left: 2px;
+  margin-right: 2px;
 
 }
 .Designer a:hover{
