@@ -1,17 +1,15 @@
 {
   "files": {
     "main.css": "/unipr_cai_tabebella_compiler/static/css/main.77a53bc9.css",
-    "main.js": "/unipr_cai_tabebella_compiler/static/js/main.5a0599de.js",
-    "static/js/787.84e4d631.chunk.js": "/unipr_cai_tabebella_compiler/static/js/787.84e4d631.chunk.js",
+    "main.js": "/unipr_cai_tabebella_compiler/static/js/main.d005a847.js",
     "static/media/logopdf.png": "/unipr_cai_tabebella_compiler/static/media/logopdf.88cdc449df10601259cd.png",
     "static/media/logo.png": "/unipr_cai_tabebella_compiler/static/media/logo.492a7b358a20f4419613.png",
     "index.html": "/unipr_cai_tabebella_compiler/index.html",
     "main.77a53bc9.css.map": "/unipr_cai_tabebella_compiler/static/css/main.77a53bc9.css.map",
-    "main.5a0599de.js.map": "/unipr_cai_tabebella_compiler/static/js/main.5a0599de.js.map",
-    "787.84e4d631.chunk.js.map": "/unipr_cai_tabebella_compiler/static/js/787.84e4d631.chunk.js.map"
+    "main.d005a847.js.map": "/unipr_cai_tabebella_compiler/static/js/main.d005a847.js.map"
   },
   "entrypoints": [
     "static/css/main.77a53bc9.css",
-    "static/js/main.5a0599de.js"
+    "static/js/main.d005a847.js"
   ]
 }
